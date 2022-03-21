@@ -76,7 +76,7 @@ class _PinputState extends State<Pinput>
       widget.controller!.addListener(_handleTextEditingControllerChanges);
     }
     effectiveFocusNode.canRequestFocus = isEnabled && widget.useNativeKeyboard;
-    maybeInitSmartAuth();
+    if (!kIsWeb) maybeInitSmartAuth();
   }
 
   /// Android Autofill
